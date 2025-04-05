@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Gadget" load_steps=3 format=3 uid="uid://dopouep552sl7"]
+
+[ext_resource type="Script" uid="uid://bjfdjk37g5cd8" path="res://scripts/Gadget.gd" id="1_c8x53"]
+[ext_resource type="Texture2D" uid="uid://c0dtenga44lhq" path="res://assets/icon_gagdet_green.png" id="2_pk5y1"]
+
+[resource]
+script = ExtResource("1_c8x53")
+type = 1
+name = "gadget_green"
+description = "A green Gadget"
+texture = ExtResource("2_pk5y1")

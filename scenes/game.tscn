@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://neq34iubm0ku"]
+
+[ext_resource type="PackedScene" uid="uid://cka12xls0h3i7" path="res://scenes/fuel_gauge.tscn" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://c5f1fgbk4alil" path="res://assets/background_mockup.png" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://brspnvtl7gtjd" path="res://scenes/crank.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dspmthqsw0diy" path="res://scenes/hull_pressure_gauge.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FuelGauge" parent="CanvasLayer" instance=ExtResource("1_yqjtg")]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.573
+anchor_right = 0.722
+anchor_bottom = 0.708
+offset_left = 402.08
+offset_top = 164.44
+offset_right = -249.16
+offset_bottom = 119.24
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_lnu2h")
+
+[node name="Crank" parent="CanvasLayer" instance=ExtResource("3_lnu2h")]
+offset_left = 763.0
+offset_top = 461.0
+offset_right = 836.0
+offset_bottom = 504.0
+
+[node name="HullPressureGauge" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
+offset_left = 517.0
+offset_top = 510.0
+offset_right = -637.0
+offset_bottom = -165.0

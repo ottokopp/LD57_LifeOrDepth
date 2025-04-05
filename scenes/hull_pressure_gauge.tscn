@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dspmthqsw0diy"]
+
+[ext_resource type="Script" uid="uid://ckhaypijurhpt" path="res://scripts/hull_pressure_gauge.gd" id="1_8pyt0"]
+[ext_resource type="PackedScene" uid="uid://bo4a4c1khmqvg" path="res://scenes/fuel_pip.tscn" id="1_qixxo"]
+
+[node name="HullPressureGauge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8pyt0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HullMeter" type="GridContainer" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+
+[node name="FuelPip" parent="VBoxContainer/MarginContainer/HullMeter" instance=ExtResource("1_qixxo")]
+layout_mode = 2
+
+[node name="FuelPip2" parent="VBoxContainer/MarginContainer/HullMeter" instance=ExtResource("1_qixxo")]
+layout_mode = 2
+
+[node name="FuelPip3" parent="VBoxContainer/MarginContainer/HullMeter" instance=ExtResource("1_qixxo")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Hull Pressure"
+fit_content = true
+vertical_alignment = 2

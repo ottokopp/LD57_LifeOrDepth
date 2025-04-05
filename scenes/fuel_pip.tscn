@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo4a4c1khmqvg"]
+
+[ext_resource type="Script" path="res://scripts/fuel_pip.gd" id="1_80yeh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80yeh"]
+
+[sub_resource type="Theme" id="Theme_jw8vs"]
+
+[node name="FuelPip" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_80yeh")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+material = SubResource("CanvasItemMaterial_80yeh")
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = SubResource("Theme_jw8vs")
