@@ -1,15 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://neq34iubm0ku"]
+[gd_scene load_steps=12 format=3 uid="uid://neq34iubm0ku"]
 
+[ext_resource type="Script" uid="uid://dnt05jm457brg" path="res://scripts/game.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cka12xls0h3i7" path="res://scenes/fuel_gauge.tscn" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://c5f1fgbk4alil" path="res://assets/background_mockup.png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://brspnvtl7gtjd" path="res://scenes/crank.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dspmthqsw0diy" path="res://scenes/hull_pressure_gauge.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cbjdt7jp441s0" path="res://scenes/gadget_bag.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cm66j5rhx7wtd" path="res://scenes/gadget_history.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dah0g057joqkn" path="res://scenes/shop.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://sk00xye306sr" path="res://scenes/depth_meter.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dlm2vtcpfitjh" path="res://scenes/money.tscn" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://jhy6ovi1txfq" path="res://scenes/eject_button.tscn" id="10_vtaks"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_0tnpc")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="SubmarineLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
-[node name="FuelGauge" parent="CanvasLayer" instance=ExtResource("1_yqjtg")]
+[node name="FuelGauge" parent="SubmarineLayer" instance=ExtResource("1_yqjtg")]
 z_index = 1
 anchors_preset = -1
 anchor_left = 0.089
@@ -23,19 +32,60 @@ offset_bottom = 119.24
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_lnu2h")
-
-[node name="Crank" parent="CanvasLayer" instance=ExtResource("3_lnu2h")]
+[node name="Crank" parent="SubmarineLayer" instance=ExtResource("3_lnu2h")]
 offset_left = 763.0
 offset_top = 461.0
 offset_right = 836.0
 offset_bottom = 504.0
 
-[node name="HullPressureGauge" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
+[node name="HullPressureGauge" parent="SubmarineLayer" instance=ExtResource("4_lbhrr")]
 offset_left = 517.0
 offset_top = 510.0
 offset_right = -637.0
 offset_bottom = -165.0
+
+[node name="GadgetBag" parent="SubmarineLayer" instance=ExtResource("5_iywne")]
+unique_name_in_owner = true
+offset_left = 939.0
+offset_top = 420.0
+offset_right = -116.0
+offset_bottom = -174.0
+
+[node name="GadgetHistory" parent="SubmarineLayer" instance=ExtResource("6_p57ef")]
+offset_left = 1016.0
+offset_top = 15.0
+offset_right = -217.0
+offset_bottom = 149.0
+
+[node name="DepthMeter" parent="SubmarineLayer" instance=ExtResource("7_u5sy4")]
+offset_left = 59.0
+offset_top = 112.0
+offset_right = -1140.0
+offset_bottom = -556.0
+
+[node name="EjectButton" parent="SubmarineLayer" instance=ExtResource("10_vtaks")]
+offset_left = 907.0
+offset_top = 586.0
+offset_right = -296.0
+offset_bottom = -82.0
+
+[node name="Money" parent="SubmarineLayer" instance=ExtResource("9_kvpfn")]
+offset_left = 15.0
+offset_top = 18.0
+offset_right = -1209.0
+offset_bottom = -660.0
+
+[node name="ShopLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Shop" parent="ShopLayer" instance=ExtResource("7_gee14")]
+offset_left = 208.0
+offset_top = 97.0
+offset_right = -466.0
+offset_bottom = -177.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_lnu2h")

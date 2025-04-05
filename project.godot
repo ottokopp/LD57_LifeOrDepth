@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GameVariables="*res://game_variables.gd"
+StateMachine="*res://state_machine.gd"
 
 [display]
 

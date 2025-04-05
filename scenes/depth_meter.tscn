@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://sk00xye306sr"]
+
+[ext_resource type="Script" uid="uid://d2uyxxlbye2ad" path="res://scripts/depth_meter.gd" id="1_5j0h7"]
+
+[node name="DepthMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5j0h7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 79.0
+offset_bottom = 48.0
+
+[node name="DepthText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 77.0
+offset_bottom = 45.0
+text = "Depth:
+100 fm."

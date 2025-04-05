@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://dah0g057joqkn"]
+
+[ext_resource type="PackedScene" uid="uid://d370wio43bww5" path="res://scenes/shop_gadget.tscn" id="1_1l46r"]
+[ext_resource type="PackedScene" uid="uid://cbjdt7jp441s0" path="res://scenes/gadget_bag.tscn" id="1_lx5au"]
+[ext_resource type="Script" uid="uid://do8qvulb5hrwe" path="res://scripts/done.gd" id="2_xfvoa"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 813.0
+offset_bottom = 447.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 46.0
+text = "Shop:"
+
+[node name="GadgetShopGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 77.0
+offset_right = 629.0
+offset_bottom = 151.0
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 0
+columns = 6
+
+[node name="ShopGadget" parent="GadgetShopGrid" instance=ExtResource("1_1l46r")]
+layout_mode = 2
+
+[node name="ShopGadget2" parent="GadgetShopGrid" instance=ExtResource("1_1l46r")]
+layout_mode = 2
+
+[node name="TrinketShopGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 261.0
+offset_right = 677.0
+offset_bottom = 320.0
+columns = 3
+
+[node name="RemoveGadget" type="Button" parent="."]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 370.0
+offset_right = 796.0
+offset_bottom = 424.0
+text = "Remove
+Gadget"
+
+[node name="GadgetBag" parent="." instance=ExtResource("1_lx5au")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 37.0
+offset_top = 341.0
+offset_right = -577.0
+offset_bottom = -304.0
+
+[node name="Done" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 13.0
+offset_right = 791.0
+offset_bottom = 44.0
+text = "Done >>>"
+script = ExtResource("2_xfvoa")
