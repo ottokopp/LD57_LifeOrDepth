@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dah0g057joqkn"]
 
-[ext_resource type="PackedScene" uid="uid://d370wio43bww5" path="res://scenes/shop_gadget.tscn" id="1_1l46r"]
+[ext_resource type="Script" uid="uid://0gnlsmc182vh" path="res://shop.gd" id="1_032fp"]
 [ext_resource type="PackedScene" uid="uid://cbjdt7jp441s0" path="res://scenes/gadget_bag.tscn" id="1_lx5au"]
 [ext_resource type="Script" uid="uid://do8qvulb5hrwe" path="res://scripts/done.gd" id="2_xfvoa"]
 
@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_032fp")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -32,12 +33,6 @@ offset_bottom = 151.0
 theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 0
 columns = 6
-
-[node name="ShopGadget" parent="GadgetShopGrid" instance=ExtResource("1_1l46r")]
-layout_mode = 2
-
-[node name="ShopGadget2" parent="GadgetShopGrid" instance=ExtResource("1_1l46r")]
-layout_mode = 2
 
 [node name="TrinketShopGrid" type="GridContainer" parent="."]
 layout_mode = 0

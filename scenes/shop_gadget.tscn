@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d370wio43bww5"]
+[gd_scene load_steps=4 format=3 uid="uid://d370wio43bww5"]
 
 [ext_resource type="PackedScene" uid="uid://dra444enowu5x" path="res://scenes/gadget_ui.tscn" id="1_exaqv"]
+[ext_resource type="Script" uid="uid://cacabc548fkrl" path="res://scripts/shop_gadget.gd" id="1_g036m"]
 [ext_resource type="Script" uid="uid://bwjd7mwe1vvus" path="res://scripts/shop_button.gd" id="2_cc18d"]
 
 [node name="ShopGadget" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g036m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

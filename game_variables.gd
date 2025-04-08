@@ -1,5 +1,7 @@
 extends Node
 
+@onready var rng = RandomNumberGenerator.new() 
+
 @onready var fuel_max: int = 3
 @onready var current_fuel: int = 3
 @onready var max_hull_dmg: int = 3
@@ -15,6 +17,17 @@ extends Node
 
 signal cranked_the_thing()
 signal toggle_ui_update()
+
+var gadget_data: Array = [
+	"res://data/gadget_black.tres",
+	"res://data/gadget_blue.tres",
+	"res://data/gadget_green.tres",
+	"res://data/gadget_orange.tres",
+	"res://data/gadget_purple.tres",
+	"res://data/gadget_red.tres",
+	"res://data/gadget_white.tres",
+	"res://data/gadget_yellow.tres",
+]
 
 var starter_items_dict: Array[Array] = [
 	[4, "res://data/gadget_red.tres"],
@@ -45,6 +58,21 @@ func return_from_history_to_bag():
 	while gadget_history:
 		var temp_gadget = gadget_history.pop_front()
 		gadget_bag.append(temp_gadget)
+		
+func get_random_gadget():
+	var random_gadget_data_path = gadget_data.pick_random()
+	var random_gadget_data = load(random_gadget_data_path)
+	var new_gadget = get_gadget_from_data(random_gadget_data)
+	return new_gadget
+		
+func get_gadget_from_data(gadget_info) -> Gadget:
+	var new_gadget = Gadget.new()
+	print(gadget_info)
+	new_gadget.name = gadget_info.name
+	new_gadget.description = gadget_info.description
+	new_gadget.texture = gadget_info.texture
+	new_gadget.type = gadget_info.type
+	return new_gadget
 	
 func setup_starter_bag():
 	if first_game_setup:
@@ -53,11 +81,7 @@ func setup_starter_bag():
 			var gadget_data_path = start_info[1]
 			var gadget_info: Resource = load(gadget_data_path)
 			for n in range(gadget_num):
-				var new_gadget = Gadget.new()
-				new_gadget.name = gadget_info.name
-				new_gadget.description = gadget_info.description
-				new_gadget.texture = gadget_info.texture
-				new_gadget.type = gadget_info.type
+				var new_gadget = get_gadget_from_data(gadget_info)
 				gadget_bag.append(new_gadget)
 		first_game_setup = false
 	gadget_bag.shuffle()

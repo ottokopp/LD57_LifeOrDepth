@@ -9,6 +9,7 @@ func _enter_game_over():
 	print("GAME OVER!")
 	
 func _enter_shop():
+	$ShopLayer/Shop.restock_shop()
 	%SubmarineLayer.visible = false
 	%ShopLayer.visible = true
 
