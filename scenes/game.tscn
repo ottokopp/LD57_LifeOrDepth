@@ -85,6 +85,12 @@ offset_top = 97.0
 offset_right = -466.0
 offset_bottom = -177.0
 
+[node name="Money" parent="ShopLayer" instance=ExtResource("9_kvpfn")]
+offset_left = 15.0
+offset_top = 18.0
+offset_right = -1209.0
+offset_bottom = -660.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0

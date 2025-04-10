@@ -13,7 +13,6 @@ func update_history_ui():
 	for child in %GridContainer.get_children():
 		child.queue_free()
 		
-	print("Gadget History: ", GameVariables.gadget_history)
 	for gadget in GameVariables.gadget_history:
 		var new_gadget_ui = GadgetUI.new()
 		new_gadget_ui.gadget_data = gadget

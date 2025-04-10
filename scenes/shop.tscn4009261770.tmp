@@ -50,13 +50,11 @@ offset_top = 370.0
 offset_right = 796.0
 offset_bottom = 424.0
 text = "Remove
-Gadget
-200 $"
+Gadget"
 script = ExtResource("2_032fp")
 
 [node name="GadgetBag" parent="." instance=ExtResource("1_lx5au")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 offset_left = 37.0
 offset_top = 341.0
@@ -71,13 +69,3 @@ offset_right = 791.0
 offset_bottom = 44.0
 text = "Done >>>"
 script = ExtResource("2_xfvoa")
-
-[node name="CurrentBagGrid" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 327.0
-offset_right = 702.0
-offset_bottom = 428.0
-theme_override_constants/h_separation = 70
-theme_override_constants/v_separation = 70
-columns = 10

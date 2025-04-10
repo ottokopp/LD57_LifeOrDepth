@@ -9,3 +9,4 @@ type = 5
 name = "gadget_black"
 description = "A black gadget"
 texture = ExtResource("2_fo364")
+price = 50

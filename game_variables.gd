@@ -72,6 +72,7 @@ func get_gadget_from_data(gadget_info) -> Gadget:
 	new_gadget.description = gadget_info.description
 	new_gadget.texture = gadget_info.texture
 	new_gadget.type = gadget_info.type
+	new_gadget.price = gadget_info.price
 	return new_gadget
 	
 func setup_starter_bag():
