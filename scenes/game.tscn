@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://neq34iubm0ku"]
+[gd_scene load_steps=13 format=3 uid="uid://neq34iubm0ku"]
 
 [ext_resource type="Script" uid="uid://dnt05jm457brg" path="res://scripts/game.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cka12xls0h3i7" path="res://scenes/fuel_gauge.tscn" id="1_yqjtg"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dah0g057joqkn" path="res://scenes/shop.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://sk00xye306sr" path="res://scenes/depth_meter.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dlm2vtcpfitjh" path="res://scenes/money.tscn" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://0i13gfwoj2n8" path="res://scenes/speedometer.tscn" id="10_dinhu"]
 [ext_resource type="PackedScene" uid="uid://jhy6ovi1txfq" path="res://scenes/eject_button.tscn" id="10_vtaks"]
 
 [node name="Game" type="Node2D"]
@@ -74,6 +75,12 @@ offset_left = 15.0
 offset_top = 18.0
 offset_right = -1209.0
 offset_bottom = -660.0
+
+[node name="Speedometer" parent="SubmarineLayer" instance=ExtResource("10_dinhu")]
+offset_left = 568.0
+offset_top = 366.0
+offset_right = -633.0
+offset_bottom = -306.0
 
 [node name="ShopLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://0i13gfwoj2n8"]
+
+[ext_resource type="Script" uid="uid://daxkrkbme7uco" path="res://scripts/speedometer.gd" id="1_gcven"]
+
+[node name="Speedometer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gcven")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 78.0
+offset_bottom = 45.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 46.0
+text = "Speed:
+200"

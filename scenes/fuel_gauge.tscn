@@ -37,7 +37,7 @@ layout_mode = 2
 [node name="FuelPip3" parent="VBoxContainer/MarginContainer/FuelMeter" instance=ExtResource("2_neakk")]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer"]
+[node name="FuelText" type="RichTextLabel" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Fuel"

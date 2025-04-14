@@ -2,11 +2,14 @@ extends Node
 
 @onready var rng = RandomNumberGenerator.new() 
 
-@onready var fuel_max: int = 3
-@onready var current_fuel: int = 3
+@onready var sub_speed: float = 200.0
+@onready var accum: float = 0.0
+
+@onready var fuel_max: int = 20
+@onready var current_fuel: int = 20
 @onready var max_hull_dmg: int = 3
 @onready var current_hull_dmg: int = 0
-@onready var current_depth: int = 0
+@onready var current_depth: int = 0.0
 @onready var money: int = 0
 @onready var lives: int = 3
 
@@ -41,7 +44,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	accum += delta
 	if StateMachine.in_state == 0:
+		if accum >= 1.0:
+			current_depth += sub_speed
+			current_fuel -= 1
+			accum = 0.0
+		
 		# Lose condition:
 		if current_hull_dmg >= max_hull_dmg:
 			print("Hull damages!! Eject!!")
@@ -91,14 +100,6 @@ func setup_starter_bag():
 		#print(gadget.name, gadget.type, gadget.texture.resource_path)
 		
 func crank():
-	# Debug stuff:
-	current_fuel -= 1
-	# current_hull_dmg += 1
-	money += 200
-	current_depth += 100
-	print("Cranked it! Fuel now at ", current_fuel, "\n", "Hull damage at ", current_hull_dmg)
-	# End debug stuff
-	
 	gadget_bag.shuffle()
 	var picked_gadget = gadget_bag.front()
 	gadget_bag.pop_front()
